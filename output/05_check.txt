@@ -1,0 +1,40 @@
+CHECKS OF REPRODUCED FIGURES AGAINST THE PAPER
+========================================================================================
+section            quantity                                        paper     here  
+----------------------------------------------------------------------------------------
+III.A              asset-circuit share, sample mean (unsmoothed)   81.400   81.385  PASS
+III.A              sample low, four-quarter MA, 2021Q1            75.400   75.389  PASS
+III.A              end of sample, four-quarter MA, 2026Q1         84.800   84.826  PASS
+III.A              2010-13 mean                                   80.100   80.080  PASS
+III.A              2015-18 mean                                   79.900   79.930  PASS
+III.A              t, 2010-13 vs 2015-18                           0.490    0.490  PASS
+III.A              t, 2010-13 vs recent                           -8.500   -8.540  PASS
+III.D / Table 3    nominal house prices, coefficient               0.503    0.503  PASS
+III.D / Table 3    nominal house prices, cluster SE                0.178    0.178  PASS
+III.D / Table 3    nominal house prices, t                         2.840    2.840  PASS
+III.D / Table 3    nominal house prices, bootstrap p               0.013    0.013  PASS
+III.D / Table 3    rents, coefficient                              0.040    0.040  PASS
+III.D / Table 3    rents, cluster SE                               0.150    0.150  PASS
+III.D / Table 3    rents, t                                        0.270    0.270  PASS
+III.D / Table 3    rents, bootstrap p                              0.899    0.899  PASS
+III.D / Table 3    price-to-rent ratio, coefficient                0.463    0.463  PASS
+III.D / Table 3    price-to-rent ratio, cluster SE                 0.249    0.249  PASS
+III.D / Table 3    price-to-rent ratio, t                          1.860    1.860  PASS
+III.D / Table 3    price-to-rent ratio, bootstrap p                0.091    0.091  PASS
+III.D robustness   excl. Australia and New Zealand                 0.417    0.417  PASS
+III.D robustness   excl. United States                             0.492    0.492  PASS
+III.D robustness   1990 onwards                                    0.675    0.675  PASS
+III.D robustness   excl. 2007-2012                                 0.338    0.338  PASS
+III.D robustness   excl. 2020-2021                                 0.501    0.501  PASS
+III.D robustness   excl. 2007-2012, p                              0.085    0.085  PASS
+III.D              local projection, cumulative at h=1             0.840    0.839  PASS
+III.C              traded inflation, 1997-2017                     0.380    0.380  PASS
+III.C              non-traded inflation, 1997-2017                 3.260    3.260  PASS
+----------------------------------------------------------------------------------------
+28 checks, 28 passed, 0 failed.
+
+NOT CHECKED HERE. The Australian structural-break and monetary-aggregate results
+(III.A, III.C), the American series of Table 2 and III.B, the New Zealand and
+American flow-versus-stock results (III.D) and the wealth decompositions (III.E)
+are computed from the published series named in Appendix B and are not re-estimated
+in this package. Appendix B documents their construction.

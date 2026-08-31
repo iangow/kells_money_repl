@@ -1,0 +1,9 @@
+Mean of year-ended quarterly rates (per cent)
+period        tradables  non-tradables   headline   paper says
+1997-2017          0.38           3.26       2.47   tradables 0.38, non-tradables 3.26
+2022               5.90           5.95       6.62   tradables 5.9
+2023               4.45           6.50       5.60   tradables 4.5
+2024               1.00           4.30       3.18   tradables 1.0, non-tradables 4.3
+2025               1.58           3.77       2.83   tradables 1.6, non-tradables 3.8
+
+tradables at or below zero in 7 of 21 years, 1997-2017   paper says 7 of 21

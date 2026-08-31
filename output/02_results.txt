@@ -1,0 +1,25 @@
+panel: 896 country-years, 21 countries, 1971-2025
+
+TABLE 3 — regressor: annual change in the household share of total credit (pp)
+dependent (annual change, log pts)         coef    clSE       t   boot p
+nominal house prices                     +0.503   0.178   +2.84    0.013
+rents                                    +0.040   0.150   +0.27    0.899
+price-to-rent ratio                      +0.463   0.249   +1.86    0.091
+
+memo: level of the household credit share on price-to-rent  b=-0.120 (se 0.057, t=-2.12) -- convergence
+
+ROBUSTNESS (dependent = nominal house prices | rents)
+  baseline                           prices +0.503 (p=0.0046) | rents +0.040 (p=0.790)  n=896
+  excl. Australia and New Zealand    prices +0.417 (p=0.0196) | rents +0.100 (p=0.500)  n=822
+  excl. United States                prices +0.492 (p=0.0106) | rents +0.049 (p=0.744)  n=842
+  1990 onwards                       prices +0.675 (p=0.0002) | rents -0.024 (p=0.770)  n=704
+  excl. 2007-2012                    prices +0.338 (p=0.0845) | rents -0.007 (p=0.968)  n=770
+  excl. 2020-2021                    prices +0.501 (p=0.0059) | rents +0.033 (p=0.833)  n=854
+
+LOCAL PROJECTIONS (cumulative, country+year FE)
+  h=0  HPI +0.508 (0.188) p=0.007   RPI +0.039 (0.143) p=0.788
+  h=1  HPI +0.839 (0.252) p=0.001   RPI -0.016 (0.202) p=0.938
+  h=2  HPI +0.796 (0.368) p=0.031   RPI -0.162 (0.250) p=0.517
+  h=3  HPI +0.802 (0.439) p=0.068   RPI -0.182 (0.317) p=0.566
+  h=4  HPI +0.379 (0.531) p=0.475   RPI -0.415 (0.361) p=0.250
+  h=5  HPI +0.165 (0.541) p=0.760   RPI -0.631 (0.382) p=0.099
