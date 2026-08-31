@@ -46,6 +46,7 @@ written to `output/`. All inputs are in `data_raw/` — no network access is req
     code/05_check_against_paper.py   Compares every reproduced figure with the paper's
     code/fetch_abs_lending.py        Fetches ABS Lending Indicators Table 3
     code/fetch_fred_bis.py           Fetches the BIS credit CSV files from FRED
+    code/fetch_oecd.py               Fetches the OECD SDMX CSV files
     code/run_all.py                  Driver
     data_raw/                        Inputs, unmodified as retrieved (see MANIFEST.md)
     output/                          Generated figures, series and result logs
@@ -56,6 +57,7 @@ The package includes source-specific fetch scripts:
 
     uv run code/fetch_fred_bis.py
     uv run code/fetch_abs_lending.py
+    uv run code/fetch_oecd.py
 
 `fetch_fred_bis.py` refreshes the four `data_raw/bis_fredgraph*.csv` files from
 FRED. `fetch_abs_lending.py` refreshes `data_raw/560103.xlsx` from the ABS March
@@ -70,6 +72,13 @@ directory:
     uv run code/fetch_fred_bis.py --output-dir /tmp/kells_money_repl_fred
     uv run code/fetch_abs_lending.py --output-dir /tmp/kells_money_repl_abs
     uv run code/fetch_abs_lending.py --latest --output-dir /tmp/kells_money_repl_abs_latest
+    uv run code/fetch_oecd.py --output-dir /tmp/kells_money_repl_oecd
+
+The OECD fetcher can also refresh one CSV at a time:
+
+    uv run code/fetch_oecd.py --only oecd_house_prices_raw.csv
+    uv run code/fetch_oecd.py --only oecd_cpi_goods_services.csv
+    uv run code/fetch_oecd.py --only oecd_household_dashboard.csv
 
 Fresh downloads may differ from the committed raw files if the source database has
 been revised since the retrieval dates recorded in `MANIFEST.md`.
