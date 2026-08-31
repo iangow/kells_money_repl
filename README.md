@@ -47,6 +47,7 @@ written to `output/`. All inputs are in `data_raw/` — no network access is req
     code/fetch_abs_lending.py        Fetches ABS Lending Indicators Table 3
     code/fetch_fred_bis.py           Fetches the BIS credit CSV files from FRED
     code/fetch_oecd.py               Fetches the OECD SDMX CSV files
+    code/fetch_rba_g1.py             Fetches RBA Statistical Table G1
     code/run_all.py                  Driver
     data_raw/                        Inputs, unmodified as retrieved (see MANIFEST.md)
     output/                          Generated figures, series and result logs
@@ -58,6 +59,7 @@ The package includes source-specific fetch scripts:
     uv run code/fetch_fred_bis.py
     uv run code/fetch_abs_lending.py
     uv run code/fetch_oecd.py
+    uv run code/fetch_rba_g1.py
 
 `fetch_fred_bis.py` refreshes the four `data_raw/bis_fredgraph*.csv` files from
 FRED. `fetch_abs_lending.py` refreshes `data_raw/560103.xlsx` from the ABS March
@@ -66,6 +68,9 @@ latest-release workbook instead:
 
     uv run code/fetch_abs_lending.py --latest
 
+`fetch_rba_g1.py` fetches the current RBA G1 CSV; use `--url` if you have an
+archived copy to reproduce an earlier publication date.
+
 To test fresh downloads without replacing the committed inputs, write to a scratch
 directory:
 
@@ -73,6 +78,7 @@ directory:
     uv run code/fetch_abs_lending.py --output-dir /tmp/kells_money_repl_abs
     uv run code/fetch_abs_lending.py --latest --output-dir /tmp/kells_money_repl_abs_latest
     uv run code/fetch_oecd.py --output-dir /tmp/kells_money_repl_oecd
+    uv run code/fetch_rba_g1.py --output-dir /tmp/kells_money_repl_rba
 
 The OECD fetcher can also refresh one CSV at a time:
 
