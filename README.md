@@ -44,6 +44,7 @@ written to `output/`. All inputs are in `data_raw/` — no network access is req
     code/03_verify_g1.py             Section III.C inflation rates, from RBA Table G1
     code/04_pandemic_channel.py      Cross-country pandemic channel test (a null; not in the paper)
     code/05_check_against_paper.py   Compares every reproduced figure with the paper's
+    code/fetch_abs_lending.py        Fetches ABS Lending Indicators Table 3
     code/fetch_fred_bis.py           Fetches the BIS credit CSV files from FRED
     code/run_all.py                  Driver
     data_raw/                        Inputs, unmodified as retrieved (see MANIFEST.md)
@@ -51,14 +52,24 @@ written to `output/`. All inputs are in `data_raw/` — no network access is req
 
 ## Fetching data
 
-The package includes one source-specific fetch script so far:
+The package includes source-specific fetch scripts:
 
     uv run code/fetch_fred_bis.py
+    uv run code/fetch_abs_lending.py
 
-This refreshes the four `data_raw/bis_fredgraph*.csv` files from FRED. To test a
-fresh download without replacing the committed inputs, write to a scratch directory:
+`fetch_fred_bis.py` refreshes the four `data_raw/bis_fredgraph*.csv` files from
+FRED. `fetch_abs_lending.py` refreshes `data_raw/560103.xlsx` from the ABS March
+Quarter 2026 release used in this package; add `--latest` to fetch the current ABS
+latest-release workbook instead:
+
+    uv run code/fetch_abs_lending.py --latest
+
+To test fresh downloads without replacing the committed inputs, write to a scratch
+directory:
 
     uv run code/fetch_fred_bis.py --output-dir /tmp/kells_money_repl_fred
+    uv run code/fetch_abs_lending.py --output-dir /tmp/kells_money_repl_abs
+    uv run code/fetch_abs_lending.py --latest --output-dir /tmp/kells_money_repl_abs_latest
 
 Fresh downloads may differ from the committed raw files if the source database has
 been revised since the retrieval dates recorded in `MANIFEST.md`.
