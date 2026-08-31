@@ -25,8 +25,14 @@ re-estimated here.
 
 ## Running it
 
-    pip install -r requirements.txt
-    python code/run_all.py
+Install `uv` if needed:
+
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+
+Then install the project dependencies and run the replication package:
+
+    uv sync
+    uv run code/run_all.py
 
 Runtime is about a minute, most of it the wild cluster bootstrap. Everything is
 written to `output/`. All inputs are in `data_raw/` — no network access is required.
