@@ -44,9 +44,24 @@ written to `output/`. All inputs are in `data_raw/` — no network access is req
     code/03_verify_g1.py             Section III.C inflation rates, from RBA Table G1
     code/04_pandemic_channel.py      Cross-country pandemic channel test (a null; not in the paper)
     code/05_check_against_paper.py   Compares every reproduced figure with the paper's
+    code/fetch_fred_bis.py           Fetches the BIS credit CSV files from FRED
     code/run_all.py                  Driver
     data_raw/                        Inputs, unmodified as retrieved (see MANIFEST.md)
     output/                          Generated figures, series and result logs
+
+## Fetching data
+
+The package includes one source-specific fetch script so far:
+
+    uv run code/fetch_fred_bis.py
+
+This refreshes the four `data_raw/bis_fredgraph*.csv` files from FRED. To test a
+fresh download without replacing the committed inputs, write to a scratch directory:
+
+    uv run code/fetch_fred_bis.py --output-dir /tmp/kells_money_repl_fred
+
+Fresh downloads may differ from the committed raw files if the source database has
+been revised since the retrieval dates recorded in `MANIFEST.md`.
 
 ## Verification
 
