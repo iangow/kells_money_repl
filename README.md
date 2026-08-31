@@ -4,7 +4,7 @@
 inflation, asset prices, the distribution of wealth and the effectiveness of
 monetary policy**
 
-Package assembled 26 August 2026.
+Package assembled 31 August 2026.
 
 This package reproduces every result the paper estimates from raw inputs:
 
